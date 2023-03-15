@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  --Font-size: 15px;
+
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+
+  background-color: #fafafa;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--Very-Dark-Blue);
+}
+
+h1 {
+  font-weight: 10;
+}
+h3 {
+  font-weight: 600;
+  margin-bottom: 1.5em;
+}
+.cards p {
+  font-weight: 200;
+  color: var(--Very-Light-Gray);
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3.5em 2em;
+}
+
+.container header {
+  text-align: center;
+  margin: 4em 0;
+}
+.container header h1 {
+  font-weight: 400;
+}
+.container header h2 {
+  font-size: 2em;
+  padding-bottom: 0.8em;
+}
+header p {
+  max-width: 650px; /*每次给一个元素max-width设定的时候
+    一定也要把margin set to 0 auto 这样他才会在中间*/
+  margin: 0 auto;
+  font-weight: 400;
+}
+.container .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+}
+.container .cards .box {
+  border-radius: 8px;
+  background-color: white;
+  overflow: hidden;
+  padding: 2em;
+  box-shadow: 0px 5px 8px hsl(229, 6%, 66%);
+  transition: 1s ease;
+}
+
+.container .cards .box:hover {
+  background: linear-gradient(
+    315deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 70%
+  );
+}
+.box_1,
+.box_4 {
+  align-self: center;
+}
+
+.container .cards .box:first-child {
+  text-align: left;
+}
+.container .cards .box img {
+  float: right;
+  margin-top: 5em;
+}
+.container .cards .box_1 {
+  border-top: 6px solid hsl(180, 62%, 55%);
+}
+.container .cards .box_2 {
+  border-top: 6px solid hsl(0, 78%, 62%);
+}
+.container .cards .box_3 {
+  border-top: 6px solid hsl(34, 97%, 64%);
+}
+.container .cards .box_4 {
+  border-top: 6px solid hsl(212, 86%, 64%);
+}
+.container .cards .box_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.box_1,
+.box_2,
+.box_3,
+.box_4 {
+  box-shadow: 0 5px 5px 5px var(--Very-Light-Gray);
+}
+
+@media screen and (max-width: 768px) {
+  .container .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .container .cards .box img {
+    float: right;
+    margin-top: 3em;
+  }
+}
